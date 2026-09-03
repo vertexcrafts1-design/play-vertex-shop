@@ -12,6 +12,9 @@ const loginSave=document.getElementById('loginSave');
 const buyButtons=[...document.querySelectorAll('.buy-btn[data-url]')];
 let player=localStorage.getItem('vertex_player_verified')||'';
 
+const statsLink=document.createElement('a');statsLink.href='https://web.play-vertex.com/stats.html';statsLink.textContent='Ranglisten';document.querySelector('.head-links')?.insertBefore(statsLink,loginButton);
+const note=document.querySelector('.login-note');if(note)note.textContent='Dein Spielername wird live mit VertexCraft abgeglichen. Nur Accounts, die bereits mindestens einmal auf dem Server waren, können sich anmelden. Stripe fragt den Namen aktuell zusätzlich im Checkout ab.';
+
 function setTab(name){tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===name));panels.forEach(p=>p.classList.toggle('active',p.dataset.panel===name));window.scrollTo({top:document.querySelector('.categorybar').offsetTop-80,behavior:'smooth'})}
 tabs.forEach(t=>t.addEventListener('click',()=>setTab(t.dataset.tab)));
 function validPlayer(name){return /^[A-Za-z0-9_]{1,32}$/.test(name.trim())}

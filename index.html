@@ -2,98 +2,126 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="description" content="Offizieller VertexCraft Shop – Kristalle, Ränge und Premium BattlePass sicher über Stripe kaufen.">
-  <meta name="theme-color" content="#090a12">
-  <title>VertexCraft Shop – Offizieller Store</title>
+  <meta name="theme-color" content="#08070e">
+  <meta property="og:title" content="VertexCraft Shop">
+  <meta property="og:description" content="Offizieller Shop für VertexCraft Season 2.">
+  <meta property="og:image" content="https://web.play-vertex.com/assets/logo.png">
+  <title>VertexCraft Shop – Season 2</title>
   <link rel="icon" href="https://web.play-vertex.com/assets/logo.png">
-  <style>
-    :root{--bg:#080910;--bg2:#0c0d16;--surface:rgba(17,18,29,.88);--surface2:#11131f;--border:rgba(255,255,255,.09);--text:#f7f7fb;--muted:#aaaaba;--purple:#8b5cf6;--purple2:#c4b5fd;--accent:#6d45d8;--green:#48d597;--shadow:0 24px 80px rgba(0,0,0,.42)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 12% 5%,rgba(103,63,190,.2),transparent 32%),radial-gradient(circle at 90% 35%,rgba(81,45,155,.12),transparent 30%),linear-gradient(180deg,#080910,#0b0c14 55%,#080910);min-height:100vh}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}
-    .announcement{padding:9px 16px;text-align:center;background:linear-gradient(90deg,#5b21b6,#7c3aed,#5b21b6);font-size:12px;font-weight:800;letter-spacing:.03em}.announcement a{text-decoration:underline;text-underline-offset:3px}
-    .header{position:sticky;top:0;z-index:50;background:rgba(8,9,16,.8);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}.header-inner{height:76px;display:flex;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:11px;font-weight:950;letter-spacing:-.03em}.brand img{width:44px;height:44px;border-radius:12px}.brand span small{display:block;color:#888393;font-size:9px;letter-spacing:.18em;margin-top:2px}.nav{display:flex;align-items:center;gap:23px;color:var(--muted);font-size:13px;font-weight:750;margin-left:auto}.nav a:hover{color:white}.shop-active{color:#d9ccff!important}.actions{display:flex;align-items:center;gap:9px}.small-btn{padding:10px 14px;border:1px solid var(--border);border-radius:11px;background:rgba(255,255,255,.03);font-size:12px;font-weight:850}.small-btn.primary{background:rgba(139,92,246,.16);border-color:rgba(188,165,255,.25);color:#d9ccff}.menu{display:none;border:1px solid var(--border);background:#12131e;color:white;border-radius:10px;width:42px;height:42px}
-    .hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center;padding:92px 0 70px;min-height:620px}.hero:before{content:"";position:absolute;right:-8%;top:45px;width:55%;height:470px;border-radius:34px;background:linear-gradient(90deg,rgba(8,9,16,.25),rgba(8,9,16,.06)),url('https://web.play-vertex.com/assets/portal-world.svg') center/cover;border:1px solid var(--border);opacity:.6;box-shadow:var(--shadow);z-index:-1}.eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--purple2);font-size:11px;font-weight:950;letter-spacing:.15em}.eyebrow:before{content:"";width:27px;height:1px;background:var(--purple)}.hero h1{font-size:clamp(55px,7vw,92px);line-height:.95;letter-spacing:-.07em;margin:18px 0 20px;max-width:760px}.hero h1 span{color:var(--purple2)}.hero p{color:#c1bfca;line-height:1.75;font-size:17px;max-width:650px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{min-height:53px;padding:0 19px;border-radius:13px;border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.primary{border:0;background:linear-gradient(135deg,var(--purple2),var(--accent));box-shadow:0 15px 42px rgba(118,77,220,.3)}.btn.secondary{background:rgba(12,13,21,.76)}
-    .hero-panel{justify-self:end;width:min(390px,100%);padding:24px;border:1px solid var(--border);border-radius:25px;background:rgba(13,14,24,.83);backdrop-filter:blur(18px);box-shadow:var(--shadow)}.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.panel-head strong{font-size:15px}.online{display:flex;gap:7px;align-items:center;color:#8de8bb;font-size:11px;font-weight:900}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}.server-ip{padding:17px;border:1px solid var(--border);border-radius:15px;background:rgba(255,255,255,.025);cursor:pointer}.server-ip span{display:block;color:#817c89;font-size:10px;font-weight:800;letter-spacing:.08em}.server-ip strong{display:block;margin-top:5px;font-size:18px}.trust-list{display:grid;gap:11px;margin-top:18px}.trust{display:flex;gap:12px;align-items:center;color:#b7b2bf;font-size:12px}.trust b{display:grid;place-items:center;width:31px;height:31px;border-radius:9px;background:rgba(139,92,246,.12);color:#cdbdff}
-    .section{padding:80px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:30px}.section-head h2{font-size:clamp(34px,5vw,52px);letter-spacing:-.05em;margin:12px 0 0}.section-head p{max-width:540px;color:var(--muted);line-height:1.7;font-size:14px}.tabs{display:flex;flex-wrap:wrap;gap:8px}.tab{border:1px solid var(--border);background:rgba(255,255,255,.025);color:#948e9e;padding:9px 12px;border-radius:10px;font-size:11px;font-weight:900;cursor:pointer}.tab.active,.tab:hover{background:rgba(139,92,246,.13);border-color:rgba(188,165,255,.28);color:#ddd3fb}
-    .featured-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.feature-buy{position:relative;overflow:hidden;min-height:320px;padding:30px;border:1px solid rgba(188,165,255,.22);border-radius:25px;background:radial-gradient(circle at 90% 10%,rgba(139,92,246,.28),transparent 38%),var(--surface);box-shadow:var(--shadow)}.feature-buy:after{content:"✦";position:absolute;right:35px;bottom:18px;font-size:150px;color:rgba(196,181,253,.08);transform:rotate(12deg)}.badge{display:inline-flex;padding:7px 10px;border-radius:999px;border:1px solid rgba(188,165,255,.2);background:rgba(139,92,246,.1);color:#cdbdff;font-size:9px;font-weight:950;letter-spacing:.12em}.feature-buy h3{font-size:35px;letter-spacing:-.04em;margin:45px 0 10px}.feature-buy p{color:var(--muted);line-height:1.7;max-width:530px}.feature-bottom{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-top:33px}.price small{display:block;color:#77717e;font-size:10px}.price strong{display:block;font-size:28px;margin-top:2px}.buy{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:0 17px;border-radius:12px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);font-size:12px;font-weight:950;box-shadow:0 13px 35px rgba(109,40,217,.22)}
-    .mini-feature{display:grid;gap:16px}.mini-buy{padding:24px;border:1px solid var(--border);border-radius:22px;background:var(--surface)}.mini-buy h3{font-size:23px;margin:23px 0 7px}.mini-buy p{color:var(--muted);font-size:12px;line-height:1.6}.mini-buy .feature-bottom{margin-top:22px}
-    .category{margin-top:58px}.category-title{display:flex;align-items:center;gap:13px;margin-bottom:16px}.category-icon{width:45px;height:45px;border-radius:13px;display:grid;place-items:center;background:rgba(139,92,246,.12);border:1px solid rgba(188,165,255,.2);color:#d5c8ff;font-size:19px}.category-title span{display:block;color:#77717f;font-size:9px;font-weight:950;letter-spacing:.13em}.category-title h3{font-size:25px;margin:3px 0 0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.grid.three{grid-template-columns:repeat(3,1fr)}.card{position:relative;padding:23px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(155deg,rgba(22,23,36,.95),rgba(13,14,23,.96));transition:.2s;overflow:hidden}.card:hover{transform:translateY(-4px);border-color:rgba(188,165,255,.26);box-shadow:0 20px 50px rgba(0,0,0,.26)}.card .visual{height:105px;display:grid;place-items:center;margin:-4px 0 8px;font-size:46px;color:#c9baff;text-shadow:0 0 35px rgba(139,92,246,.35)}.card h4{font-size:20px;margin:15px 0 7px}.card p{color:#8f8a97;font-size:12px;line-height:1.6;min-height:58px}.card .feature-bottom{margin-top:21px}.popular{border-color:rgba(188,165,255,.25)}.corner{position:absolute;right:13px;top:13px;padding:6px 8px;border-radius:8px;background:rgba(139,92,246,.14);color:#d7c9ff;font-size:8px;font-weight:950;letter-spacing:.11em}
-    .how{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}.how-copy h2{font-size:45px;letter-spacing:-.05em;margin:13px 0}.how-copy p{color:var(--muted);line-height:1.75}.steps{display:grid;gap:12px}.step{display:flex;gap:15px;padding:19px;border:1px solid var(--border);border-radius:17px;background:rgba(17,18,29,.72)}.num{flex:0 0 40px;width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:rgba(139,92,246,.15);color:#cab9ff;font-weight:950}.step strong{display:block;margin:2px 0 4px}.step p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
-    .info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--border);margin:10px 0 90px}.info{padding:22px;background:#0e0f18}.info span{display:block;color:#77717e;font-size:9px;font-weight:900;letter-spacing:.12em}.info strong{display:block;margin-top:7px;font-size:13px}
-    footer{border-top:1px solid var(--border);padding:35px 0 45px}.footer{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}.footer-brand{display:flex;align-items:center;gap:12px}.footer-brand img{width:43px;height:43px;border-radius:11px}.footer-brand p{color:#706a77;font-size:11px;margin:4px 0 0}.footer-links{display:flex;flex-wrap:wrap;gap:18px;color:#918a99;font-size:11px;font-weight:750}.copy{cursor:pointer}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);padding:12px 17px;background:#181925;border:1px solid var(--border);border-radius:12px;font-size:12px;font-weight:900;transition:.25s;z-index:99}.toast.show{transform:translate(-50%,0)}.hidden{display:none!important}
-    @media(max-width:980px){.nav{display:none}.menu{display:block}.hero{grid-template-columns:1fr}.hero:before{right:0;width:100%;opacity:.26}.hero-panel{justify-self:start}.grid{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}.featured-grid,.how{grid-template-columns:1fr}}
-    @media(max-width:650px){.wrap{width:min(100% - 22px,1180px)}.header-inner{height:67px}.brand span{font-size:14px}.actions .small-btn{display:none}.hero{padding:60px 0 45px;min-height:auto}.hero h1{font-size:51px}.hero-panel{width:100%}.section{padding:60px 0}.section-head{flex-direction:column;align-items:flex-start}.featured-grid{grid-template-columns:1fr}.grid,.grid.three{grid-template-columns:1fr}.feature-bottom{align-items:center}.card p{min-height:0}.info-strip{grid-template-columns:1fr}.footer{grid-template-columns:1fr}.footer-links{gap:13px}}
-  </style>
+  <link rel="stylesheet" href="shop-v2.css">
 </head>
 <body>
-  <div class="announcement">Offizieller VertexCraft Store · Sichere Zahlung über Stripe · <a href="https://web.play-vertex.com">Zur Hauptseite</a></div>
-  <header class="header">
-    <div class="wrap header-inner">
-      <a class="brand" href="https://web.play-vertex.com"><img src="https://web.play-vertex.com/assets/logo.png" alt="VertexCraft Logo"><span>VertexCraft<small>OFFICIAL STORE</small></span></a>
-      <nav class="nav"><a href="https://web.play-vertex.com">Startseite</a><a class="shop-active" href="#shop">Shop</a><a href="#kristalle">Kristalle</a><a href="#raenge">Ränge</a><a href="#battlepass">BattlePass</a><a href="https://web.play-vertex.com/dashboard.html">Dashboard</a></nav>
-      <div class="actions"><a class="small-btn" href="https://discord.gg/gjDgG4X7yw" target="_blank" rel="noopener">Discord</a><button class="small-btn primary copy" data-copy="play-vertex.com">play-vertex.com</button><button class="menu">☰</button></div>
-    </div>
+  <header class="shop-header">
+    <a class="shop-brand" href="#top"><img src="https://web.play-vertex.com/assets/logo.png" alt="VertexCraft"><div><span>VertexCraft</span><small>OFFICIAL STORE</small></div></a>
+    <nav class="shop-nav">
+      <a href="#angebote">Angebote</a><a href="#kristalle">Kristalle</a><a href="#raenge">Ränge</a><a href="#battlepass">BattlePass</a>
+      <a class="home-link" href="https://web.play-vertex.com">← Hauptseite</a>
+      <a class="discord-link" href="https://discord.gg/gjDgG4X7yw" target="_blank" rel="noopener noreferrer">Discord</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero wrap">
-      <div>
-        <span class="eyebrow">VERTEXCRAFT STORE · SEASON 2</span>
-        <h1>Hol mehr aus <span>VertexCraft</span> heraus.</h1>
-        <p>Unterstütze den Server und sichere dir Kristalle, exklusive Ränge oder den Premium BattlePass. Du wählst hier dein Paket – bezahlt wird anschließend sicher über Stripe.</p>
-        <div class="hero-buttons"><a class="btn primary" href="#shop">Zum Shop</a><a class="btn secondary" href="https://web.play-vertex.com">Zur Hauptseite</a></div>
+  <main id="top">
+    <section class="shop-hero wrap">
+      <img class="shop-hero-bg" src="https://web.play-vertex.com/assets/vertex-world.svg" alt="VertexCraft Minecraft-Welt">
+      <div class="shop-hero-inner">
+        <div class="hero-copy">
+          <div class="hero-logo"><img src="https://web.play-vertex.com/assets/logo.png" alt="VertexCraft Logo"><div><strong>VertexCraft Shop</strong><span>SEASON 2 · OFFIZIELLER STORE</span></div></div>
+          <div class="eyebrow"><i></i> LIVE · SICHERER STRIPE CHECKOUT</div>
+          <h1>Hol dir dein<span>Vertex Upgrade.</span></h1>
+          <p>Kristalle, exklusive Server-Ränge und der Premium BattlePass. Wähle dein Angebot aus und bezahle anschließend sicher über den offiziellen Stripe-Checkout.</p>
+          <div class="hero-actions"><a class="btn primary" href="#angebote">◆ Angebote ansehen</a><button class="btn copy-ip" data-ip="play-vertex.com">▣ Server-IP kopieren</button><a class="btn" href="https://web.play-vertex.com">Zur Hauptseite</a></div>
+        </div>
+        <aside class="hero-side">
+          <div class="hero-panel"><span class="label">BELIEBT</span><h3>5.000 Kristalle</h3><p>Ein starkes Paket für aktive VertexCraft-Spieler.</p><div class="price"><div><span>einmalig</span><strong>13,49 €</strong></div><a href="https://buy.stripe.com/3cI3cnbGl8cW3Eg0z8dMI02">Kaufen →</a></div></div>
+          <div class="hero-panel server-box"><div><span class="label">SERVER</span><h3>play-vertex.com</h3></div><div class="status"><i></i> ONLINE</div></div>
+        </aside>
       </div>
-      <aside class="hero-panel">
-        <div class="panel-head"><strong>VertexCraft Netzwerk</strong><span class="online"><i class="dot"></i> ONLINE</span></div>
-        <div class="server-ip copy" data-copy="play-vertex.com"><span>SERVER-IP · KLICKEN ZUM KOPIEREN</span><strong>play-vertex.com</strong></div>
-        <div class="trust-list"><div class="trust"><b>✓</b><span>Stripe Checkout – verschlüsselte Zahlung</span></div><div class="trust"><b>✦</b><span>Minecraft-Spielername wird beim Kauf abgefragt</span></div><div class="trust"><b>↗</b><span>Digitale Inhalte für deinen VertexCraft Account</span></div></div>
+    </section>
+
+    <section class="trust-strip wrap">
+      <div class="trust"><span>ZAHLUNG</span><strong>Sicher über Stripe</strong></div>
+      <div class="trust"><span>ACCOUNT</span><strong>Minecraft-Name im Checkout</strong></div>
+      <div class="trust"><span>ANGEBOTE</span><strong>Digitale Server-Inhalte</strong></div>
+      <div class="trust"><span>SUPPORT</span><strong>vertexcrafts1@gmail.com</strong></div>
+    </section>
+
+    <section class="shop-layout wrap" id="angebote">
+      <aside class="sidebar">
+        <span class="side-title">SHOP KATEGORIEN</span>
+        <button class="side-btn active" data-filter="all"><span class="ico">⌂</span><span>Alle Angebote</span></button>
+        <button class="side-btn" data-filter="currency"><span class="ico">◆</span><span>Kristalle</span></button>
+        <button class="side-btn" data-filter="rank"><span class="ico">♛</span><span>Ränge</span></button>
+        <button class="side-btn" data-filter="battlepass"><span class="ico">✦</span><span>BattlePass</span></button>
+        <div class="side-card"><span>BRAUCHST DU HILFE?</span><strong>Shop Support</strong><p>Bei Fragen zu einem Kauf erreichst du uns per E-Mail oder Discord.</p><a href="mailto:vertexcrafts1@gmail.com">E-Mail senden →</a></div>
       </aside>
+
+      <div class="store-main">
+        <div class="section-head"><div><span class="section-kicker">VERTEXCRAFT STORE</span><h2>Wähle dein Upgrade.</h2><p>Alle Angebote sind einmalige digitale Käufe für VertexCraft. Beim Klick auf „Kaufen“ wirst du direkt zu Stripe weitergeleitet.</p></div></div>
+
+        <section class="category-block category" data-category="currency" id="kristalle">
+          <div class="category-title"><div class="category-icon">◆</div><div><span>INGAME-WÄHRUNG</span><h3>Kristalle</h3></div></div>
+          <div class="products">
+            <article class="product"><span class="badge">KRISTALLE</span><div class="product-symbol">◆</div><h4>1.000 Kristalle</h4><p>Das kompakte Paket für kleinere Upgrades und Shop-Inhalte.</p><div class="product-bottom"><div class="product-price"><span>EINMALIG</span><strong>3,49 €</strong></div><a class="buy" href="https://buy.stripe.com/dRm14f25L1Oy3Eg3LkdMI00">Kaufen →</a></div></article>
+            <article class="product"><span class="badge">KRISTALLE</span><div class="product-symbol">◆◆</div><h4>2.500 Kristalle</h4><p>Mehr Spielraum für Cosmetics, Premium-Inhalte und weitere Upgrades.</p><div class="product-bottom"><div class="product-price"><span>EINMALIG</span><strong>7,49 €</strong></div><a class="buy" href="https://buy.stripe.com/5kQfZ9fWBgJs0s4chQdMI01">Kaufen →</a></div></article>
+            <article class="product featured"><span class="hot">BELIEBT</span><span class="badge">KRISTALLE</span><div class="product-symbol">◆◆◆</div><h4>5.000 Kristalle</h4><p>Ein starkes Kristall-Paket für regelmäßige VertexCraft-Spieler.</p><div class="product-bottom"><div class="product-price"><span>EINMALIG</span><strong>13,49 €</strong></div><a class="buy" href="https://buy.stripe.com/3cI3cnbGl8cW3Eg0z8dMI02">Kaufen →</a></div></article>
+            <article class="product"><span class="badge">KRISTALLE</span><div class="product-symbol">✦◆✦</div><h4>10.000 Kristalle</h4><p>Das große Paket für maximale Flexibilität auf VertexCraft.</p><div class="product-bottom"><div class="product-price"><span>EINMALIG</span><strong>23,99 €</strong></div><a class="buy" href="https://buy.stripe.com/3cIcMX11Hal4gr281AdMI03">Kaufen →</a></div></article>
+          </div>
+        </section>
+
+        <section class="category-block category" data-category="rank" id="raenge">
+          <div class="category-title"><div class="category-icon">♛</div><div><span>SERVER-RÄNGE</span><h3>Ränge</h3></div></div>
+          <div class="products">
+            <article class="product rank elite"><span class="badge">RANG</span><div class="product-symbol">✧</div><h4>Elite</h4><p>Der Einstieg in die exklusiven VertexCraft Shop-Ränge.</p><div class="product-bottom"><div class="product-price"><span>EINMALIG</span><strong>8,99 €</strong></div><a class="buy" href="https://buy.stripe.com/bJe8wH39P2SC1w82HgdMI04">Elite kaufen →</a></div></article>
+            <article class="product rank champion featured"><span class="hot">TOP RANG</span><span class="badge">RANG</span><div class="product-symbol">♛</div><h4>Champion</h4><p>Ein hochwertiger Server-Rang mit starkem Auftritt auf VertexCraft.</p><div class="product-bottom"><div class="product-price"><span>EINMALIG</span><strong>14,99 €</strong></div><a class="buy" href="https://buy.stripe.com/4gMbIT11H9h07UwdlUdMI05">Champion kaufen →</a></div></article>
+            <article class="product rank mythos"><span class="badge">RANG</span><div class="product-symbol">✦♛✦</div><h4>Mythos</h4><p>Der höchste aktuell verfügbare Rang im offiziellen VertexCraft Shop.</p><div class="product-bottom"><div class="product-price"><span>EINMALIG</span><strong>21,99 €</strong></div><a class="buy" href="https://buy.stripe.com/28E4grbGl3WG4Ik0z8dMI06">Mythos kaufen →</a></div></article>
+          </div>
+        </section>
+
+        <section class="category-block category" data-category="battlepass" id="battlepass">
+          <div class="category-title"><div class="category-icon">✦</div><div><span>SEASON 2</span><h3>BattlePass</h3></div></div>
+          <article class="battlepass-card">
+            <img src="https://web.play-vertex.com/assets/portal-world.svg" alt="VertexCraft BattlePass Welt">
+            <div class="bp-copy"><span class="badge">PREMIUM · SEASON 2</span><h3>BattlePass Premium</h3><p>Schalte den Premium-Pfad des VertexCraft BattlePass frei und erhalte zusätzliche Season-Belohnungen neben dem kostenlosen Fortschritt.</p><div class="bp-features"><span>Premium Rewards</span><span>Season 2</span><span>Einmaliger Kauf</span><span>Accountgebunden</span></div></div>
+            <div class="bp-buy"><small>EINMALIG</small><strong>6,99 €</strong><a class="buy" href="https://buy.stripe.com/eVqfZ9h0FgJscaM2HgdMI07">Premium freischalten →</a></div>
+          </article>
+        </section>
+      </div>
     </section>
 
-    <section class="section wrap" id="shop">
-      <div class="section-head"><div><span class="eyebrow">STORE</span><h2>Unsere Angebote</h2></div><div><p>Alle Produkte sind einmalige Käufe. Wähle eine Kategorie oder stöbere direkt durch die beliebtesten Angebote.</p><div class="tabs"><button class="tab active" data-filter="all">Alle</button><button class="tab" data-filter="currency">Kristalle</button><button class="tab" data-filter="rank">Ränge</button><button class="tab" data-filter="battlepass">BattlePass</button></div></div></div>
-
-      <div class="featured-grid product" data-category="all">
-        <article class="feature-buy product" data-category="rank"><span class="badge">BELIEBTER RANG</span><h3>Champion</h3><p>Ein hochwertiger Server-Rang für Spieler, die VertexCraft langfristig unterstützen und mit einem starken Auftritt unterwegs sein wollen.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>14,99 €</strong></div><a class="buy" href="https://buy.stripe.com/4gMbIT11H9h07UwdlUdMI05">Champion kaufen →</a></div></article>
-        <div class="mini-feature">
-          <article class="mini-buy product" data-category="battlepass"><span class="badge">SEASON 2</span><h3>BattlePass Premium</h3><p>Schalte den Premium-Pfad und zusätzliche Season-Belohnungen frei.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>6,99 €</strong></div><a class="buy" href="https://buy.stripe.com/eVqfZ9h0FgJscaM2HgdMI07">Kaufen →</a></div></article>
-          <article class="mini-buy product" data-category="currency"><span class="badge">KRISTALLE</span><h3>5.000 Kristalle</h3><p>Ein starkes Paket für Shop-Inhalte und deine nächsten Upgrades.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>13,49 €</strong></div><a class="buy" href="https://buy.stripe.com/3cI3cnbGl8cW3Eg0z8dMI02">Kaufen →</a></div></article>
-        </div>
-      </div>
-
-      <div class="category" id="kristalle"><div class="category-title"><div class="category-icon">✦</div><div><span>INGAME-WÄHRUNG</span><h3>Kristalle</h3></div></div>
-        <div class="grid">
-          <article class="card product" data-category="currency"><div class="visual">✦</div><span class="badge">KRISTALLE</span><h4>1.000 Kristalle</h4><p>Das kompakte Paket für deinen VertexCraft Account.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>3,49 €</strong></div><a class="buy" href="https://buy.stripe.com/dRm14f25L1Oy3Eg3LkdMI00">Kaufen →</a></div></article>
-          <article class="card product" data-category="currency"><div class="visual">✦</div><span class="badge">KRISTALLE</span><h4>2.500 Kristalle</h4><p>Mehr Kristalle für deine nächsten Inhalte und Upgrades.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>7,49 €</strong></div><a class="buy" href="https://buy.stripe.com/5kQfZ9fWBgJs0s4chQdMI01">Kaufen →</a></div></article>
-          <article class="card product popular" data-category="currency"><span class="corner">BELIEBT</span><div class="visual">✦</div><span class="badge">KRISTALLE</span><h4>5.000 Kristalle</h4><p>Das starke Paket für regelmäßige VertexCraft Spieler.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>13,49 €</strong></div><a class="buy" href="https://buy.stripe.com/3cI3cnbGl8cW3Eg0z8dMI02">Kaufen →</a></div></article>
-          <article class="card product" data-category="currency"><div class="visual">✦</div><span class="badge">KRISTALLE</span><h4>10.000 Kristalle</h4><p>Das große Kristall-Paket für maximale Flexibilität.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>23,99 €</strong></div><a class="buy" href="https://buy.stripe.com/3cIcMX11Hal4gr281AdMI03">Kaufen →</a></div></article>
-        </div>
-      </div>
-
-      <div class="category" id="raenge"><div class="category-title"><div class="category-icon">♛</div><div><span>SERVER-RÄNGE</span><h3>Ränge</h3></div></div>
-        <div class="grid three">
-          <article class="card product" data-category="rank"><div class="visual">◆</div><span class="badge">RANG</span><h4>Elite</h4><p>Der Einstieg in die exklusiven VertexCraft Shop-Ränge.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>8,99 €</strong></div><a class="buy" href="https://buy.stripe.com/bJe8wH39P2SC1w82HgdMI04">Elite kaufen →</a></div></article>
-          <article class="card product popular" data-category="rank"><span class="corner">TOP RANG</span><div class="visual">♛</div><span class="badge">RANG</span><h4>Champion</h4><p>Ein hochwertiger Rang mit starkem Auftritt auf VertexCraft.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>14,99 €</strong></div><a class="buy" href="https://buy.stripe.com/4gMbIT11H9h07UwdlUdMI05">Champion kaufen →</a></div></article>
-          <article class="card product" data-category="rank"><div class="visual">✧</div><span class="badge">RANG</span><h4>Mythos</h4><p>Der höchste aktuell verfügbare VertexCraft Shop-Rang.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>21,99 €</strong></div><a class="buy" href="https://buy.stripe.com/28E4grbGl3WG4Ik0z8dMI06">Mythos kaufen →</a></div></article>
-        </div>
-      </div>
-
-      <div class="category" id="battlepass"><div class="category-title"><div class="category-icon">⌁</div><div><span>SEASON CONTENT</span><h3>BattlePass</h3></div></div>
-        <article class="feature-buy product" data-category="battlepass"><span class="badge">PREMIUM · SEASON 2</span><h3>BattlePass Premium</h3><p>Schalte den Premium-Pfad des VertexCraft BattlePass frei und sichere dir zusätzliche Belohnungen während der Season.</p><div class="feature-bottom"><div class="price"><small>EINMALIG</small><strong>6,99 €</strong></div><a class="buy" href="https://buy.stripe.com/eVqfZ9h0FgJscaM2HgdMI07">Premium kaufen →</a></div></article>
+    <section class="info-section wrap">
+      <div class="section-head"><div><span class="section-kicker">SO FUNKTIONIERT'S</span><h2>Schnell. Sicher. Einfach.</h2></div></div>
+      <div class="info-grid">
+        <article class="info-card"><div class="info-icon">1</div><h3>Angebot wählen</h3><p>Such dir Kristalle, einen Rang oder den Premium BattlePass aus.</p></article>
+        <article class="info-card"><div class="info-icon">2</div><h3>Spielername angeben</h3><p>Im Stripe Checkout wird dein Minecraft-Spielername abgefragt, damit der Kauf deinem Account zugeordnet werden kann.</p></article>
+        <article class="info-card"><div class="info-icon">3</div><h3>Über Stripe bezahlen</h3><p>Die eigentliche Zahlungsabwicklung findet sicher über Stripe statt. VertexCraft speichert keine vollständigen Karten- oder Bankdaten.</p><a href="mailto:vertexcrafts1@gmail.com">Probleme beim Kauf? Support →</a></article>
       </div>
     </section>
-
-    <section class="section wrap how"><div class="how-copy"><span class="eyebrow">SO FUNKTIONIERT'S</span><h2>Von der Auswahl bis zum Kauf.</h2><p>Der Shop selbst speichert keine Zahlungsdaten. Für die Zahlung wirst du zum Stripe Checkout weitergeleitet.</p></div><div class="steps"><div class="step"><span class="num">1</span><div><strong>Produkt auswählen</strong><p>Wähle Kristalle, einen Rang oder den Premium BattlePass.</p></div></div><div class="step"><span class="num">2</span><div><strong>Minecraft-Spielername angeben</strong><p>Im Stripe Checkout trägst du den Spielernamen ein, dem der Kauf zugeordnet werden soll.</p></div></div><div class="step"><span class="num">3</span><div><strong>Sicher bezahlen</strong><p>Stripe verarbeitet die Zahlung und zeigt dir anschließend eine Zahlungsbestätigung.</p></div></div></div></section>
-
-    <div class="wrap info-strip"><div class="info"><span>PAYMENT</span><strong>Sicher über Stripe Checkout</strong></div><div class="info"><span>SERVER</span><strong>play-vertex.com</strong></div><div class="info"><span>SUPPORT</span><strong>Über Discord & Kontakt-E-Mail</strong></div></div>
   </main>
 
-  <footer><div class="wrap footer"><div class="footer-brand"><img src="https://web.play-vertex.com/assets/logo.png" alt=""><div><strong>VertexCraft</strong><p>Next Generation SMP · Official Store</p></div></div><div class="footer-links"><a href="https://web.play-vertex.com">Hauptseite</a><a href="https://web.play-vertex.com/regeln.html">Regeln</a><a href="https://web.play-vertex.com/impressum.html">Impressum</a><a href="https://web.play-vertex.com/datenschutz.html">Datenschutz</a><a href="https://web.play-vertex.com/agb.html">AGB</a><a href="https://web.play-vertex.com/widerruf.html">Widerruf</a></div></div></footer>
-  <div class="toast" id="toast">Server-IP kopiert ✓</div>
+  <footer class="shop-footer">
+    <div class="footer-brand"><img src="https://web.play-vertex.com/assets/logo.png" alt="VertexCraft"><div><strong>VertexCraft</strong><span>Official Store · Season 2</span></div></div>
+    <div class="footer-links"><a href="https://web.play-vertex.com">Hauptseite</a><a href="https://web.play-vertex.com/regeln.html">Regeln</a><a href="https://web.play-vertex.com/impressum.html">Impressum</a><a href="https://web.play-vertex.com/datenschutz.html">Datenschutz</a><a href="https://web.play-vertex.com/agb.html">AGB</a><a href="https://web.play-vertex.com/widerruf.html">Widerruf</a></div>
+    <div class="footer-bottom"><span>Support: vertexcrafts1@gmail.com</span><span>© <span id="year"></span> VertexCraft · Nicht mit Mojang Studios oder Microsoft verbunden.</span></div>
+  </footer>
+
+  <div class="toast" id="toast">Server-IP kopiert!</div>
   <script>
-    const tabs=[...document.querySelectorAll('.tab')], products=[...document.querySelectorAll('.product')];
-    tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===t));const f=t.dataset.filter;products.forEach(p=>{if(p.classList.contains('featured-grid'))return;p.classList.toggle('hidden',f!=='all'&&p.dataset.category!==f)})}));
-    document.querySelectorAll('.copy').forEach(el=>el.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(el.dataset.copy)}catch(e){}const toast=document.getElementById('toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1600)}));
+    const filterButtons=[...document.querySelectorAll('[data-filter]')];
+    const categories=[...document.querySelectorAll('.category')];
+    filterButtons.forEach(btn=>btn.addEventListener('click',()=>{
+      filterButtons.forEach(b=>b.classList.toggle('active',b===btn));
+      const f=btn.dataset.filter;
+      categories.forEach(c=>c.classList.toggle('hidden',f!=='all'&&c.dataset.category!==f));
+      document.querySelector('.store-main').scrollIntoView({behavior:'smooth',block:'start'});
+    }));
+    const toast=document.getElementById('toast');
+    document.querySelectorAll('.copy-ip').forEach(btn=>btn.addEventListener('click',async()=>{
+      try{await navigator.clipboard.writeText(btn.dataset.ip);toast.textContent='Server-IP kopiert!';}catch{toast.textContent='IP: '+btn.dataset.ip;}
+      toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800);
+    }));
+    document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>

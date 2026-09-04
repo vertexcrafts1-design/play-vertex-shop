@@ -41,3 +41,11 @@ body{background:linear-gradient(rgba(9,9,13,.94),rgba(9,9,13,.97)),url('assets/s
 .product-body::before{content:"VERTEXCRAFT";display:block;margin-bottom:34px;color:var(--purple2);font-size:9px;font-weight:800;letter-spacing:.16em}
 .battlepass-showcase{background:rgba(16,16,23,.86)!important;backdrop-filter:blur(12px)!important}
 @media(max-width:620px){.content>.panel{padding:17px}.products>.product,.products>.product>.product-body{min-height:230px!important}}
+
+/* make category artwork clearly visible behind the product blocks */
+.content>.panel{background:rgba(9,9,14,.3)!important;backdrop-filter:blur(5px)!important}
+.content>.panel::before{opacity:.78!important}
+.content>.panel::after{background:linear-gradient(180deg,rgba(8,8,12,.12),rgba(8,8,12,.52))!important}
+.products>.product{border-color:rgba(255,255,255,.2)!important;background:rgba(13,13,19,.54)!important;backdrop-filter:blur(7px)!important}
+.products>.product>.product-body{background:transparent!important}
+.sidebar .sidebox{background:rgba(15,15,22,.7)!important;backdrop-filter:blur(10px)!important}

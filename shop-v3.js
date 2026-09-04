@@ -10,6 +10,16 @@ const profileName=document.getElementById('profileName');
 const profileHint=document.getElementById('profileHint');
 const loginSave=document.getElementById('loginSave');
 const buyButtons=[...document.querySelectorAll('.buy-btn[data-url]')];
+const checkoutLinks=Object.freeze({
+  'https://buy.stripe.com/dRm14f25L1Oy3Eg3LkdMI00':'https://buy.stripe.com/bJe4grbGl3WG5Mo3LkdMI0f',
+  'https://buy.stripe.com/5kQfZ9fWBgJs0s4chQdMI01':'https://buy.stripe.com/5kQ00b39P9h01w80z8dMI0g',
+  'https://buy.stripe.com/3cI3cnbGl8cW3Eg0z8dMI02':'https://buy.stripe.com/eVqbITbGl3WGeiU0z8dMI0h',
+  'https://buy.stripe.com/3cIcMX11Hal4gr281AdMI03':'https://buy.stripe.com/aFa4gr11Hctcgr2fu2dMI0i',
+  'https://buy.stripe.com/3cIaEPeSx3WG2Ac5TsdMI09':'https://buy.stripe.com/dRm6ozeSxeBkcaMdlUdMI0c',
+  'https://buy.stripe.com/3cI5kvh0F1Oy1w8fu2dMI0a':'https://buy.stripe.com/aFa14f11HeBkgr26XwdMI0d',
+  'https://buy.stripe.com/28E28jdOt2SCeiU95EdMI0b':'https://buy.stripe.com/cNi00bdOt2SC8YA4PodMI0e',
+  'https://buy.stripe.com/eVqfZ9h0FgJscaM2HgdMI07':'https://buy.stripe.com/bJe00b8u9bp8deQ5TsdMI0j'
+});
 let player=localStorage.getItem('vertex_player_verified')||'';
 
 const statsLink=document.createElement('a');statsLink.href='https://web.play-vertex.com/stats.html';statsLink.textContent='Ranglisten';document.querySelector('.head-links')?.insertBefore(statsLink,loginButton);
@@ -25,7 +35,7 @@ function syncLogin(){const logged=validPlayer(player);loginButton.style.display=
 async function verifyPlayer(name){const r=await fetch(`${API}/api/public/exists?name=${encodeURIComponent(name)}`,{headers:{Accept:'application/json'}});if(!r.ok)throw new Error('api_failed');const d=await r.json();return d}
 async function doLogin(){const value=loginInput.value.trim();if(!validPlayer(value)){status('Bitte einen gültigen Minecraft-Spielernamen eingeben.');return;}loginSave.disabled=true;loginSave.textContent='Prüfe …';status('Spieler wird auf VertexCraft geprüft …');try{const result=await verifyPlayer(value);if(!result.exists){status('Dieser Spieler war noch nie auf VertexCraft. Ein Shop-Login ist deshalb nicht möglich.');return;}player=result.name||value;localStorage.setItem('vertex_player_verified',player);status('Spieler bestätigt ✓',true);syncLogin();setTimeout(closeLogin,500);}catch(e){status('Die Spielerprüfung ist gerade nicht erreichbar. Prüfe, ob VertexPublicStatsWeb und die öffentliche Worker-Route aktiv sind.');}finally{loginSave.disabled=false;loginSave.textContent='Anmelden';}}
 loginButton.addEventListener('click',openLogin);accountButton.addEventListener('click',openLogin);sideLogin.addEventListener('click',openLogin);document.getElementById('loginCancel').addEventListener('click',closeLogin);loginSave.addEventListener('click',doLogin);loginModal.addEventListener('click',e=>{if(e.target===loginModal)closeLogin()});loginInput.addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
-buyButtons.forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();if(!validPlayer(player)){openLogin();return;}sessionStorage.setItem('vertex_last_player',player);window.location.href=btn.dataset.url;}));
+buyButtons.forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();if(!validPlayer(player)){openLogin();return;}sessionStorage.setItem('vertex_last_player',player);window.location.href=checkoutLinks[btn.dataset.url]||btn.dataset.url;}));
 document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(btn.dataset.copy);const old=btn.textContent;btn.textContent='IP kopiert ✓';setTimeout(()=>btn.textContent=old,1600)}catch{}}));
 const params=new URLSearchParams(location.search);if(params.get('payment')==='success'){const box=document.getElementById('successBox');const session=params.get('session_id');box.innerHTML='✓ Zahlung abgeschlossen. Willkommen zurück'+(player?' <strong>'+player+'</strong>':'')+'.'+(session?' Bestell-ID: <code>'+session.slice(0,18)+'…</code>':'');box.classList.add('show');history.replaceState({},'',location.pathname);}
 syncLogin();

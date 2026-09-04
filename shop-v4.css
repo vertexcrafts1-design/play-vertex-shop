@@ -25,3 +25,19 @@ body{background:linear-gradient(rgba(9,9,13,.94),rgba(9,9,13,.97)),url('assets/s
 .product-top.currency,.product-top.rank,.product-top.pass{background-size:cover!important;background-repeat:no-repeat!important}
 .battlepass-showcase{min-height:470px!important;background-size:cover!important;background-position:center!important}
 @media(max-width:620px){.products>.product{grid-template-rows:200px minmax(170px,auto)!important}.products>.product>.product-top{height:200px!important;min-height:200px!important;max-height:200px!important}}
+
+/* artwork sits behind product blocks instead of being cropped inside them */
+.content>.panel{position:relative;isolation:isolate;overflow:hidden;padding:28px;border:1px solid var(--line);border-radius:22px;background:rgba(10,10,15,.76);backdrop-filter:blur(14px)}
+.content>.panel::before{content:"";position:absolute;inset:0;z-index:-2;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:.48}
+.content>.panel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,8,12,.46),rgba(8,8,12,.9))}
+.content>.panel[data-panel="offers"]::before{background-image:url('assets/shop-hero-v2.png')}
+.content>.panel[data-panel="currency"]::before{background-image:url('assets/shop-crystals-v2.png')}
+.content>.panel[data-panel="ranks"]::before{background-image:url('assets/shop-ranks-v2.png')}
+.content>.panel[data-panel="battlepass"]::before{background-image:url('assets/shop-battlepass-v2.png')}
+.content>.panel[data-panel="credit"]::before{background-image:url('assets/shop-scroll-bg.png')}
+.products>.product{display:flex!important;min-height:250px!important;border-color:rgba(255,255,255,.14)!important;background:rgba(16,16,23,.88)!important;backdrop-filter:blur(12px)!important}
+.products>.product>.product-top{display:none!important}
+.products>.product>.product-body{display:flex!important;min-height:250px!important;padding:24px!important;background:transparent!important}
+.product-body::before{content:"VERTEXCRAFT";display:block;margin-bottom:34px;color:var(--purple2);font-size:9px;font-weight:800;letter-spacing:.16em}
+.battlepass-showcase{background:rgba(16,16,23,.86)!important;backdrop-filter:blur(12px)!important}
+@media(max-width:620px){.content>.panel{padding:17px}.products>.product,.products>.product>.product-body{min-height:230px!important}}

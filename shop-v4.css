@@ -43,9 +43,9 @@ body{background:linear-gradient(rgba(9,9,13,.94),rgba(9,9,13,.97)),url('assets/s
 @media(max-width:620px){.content>.panel{padding:17px}.products>.product,.products>.product>.product-body{min-height:230px!important}}
 
 /* make category artwork clearly visible behind the product blocks */
-.content>.panel{background:rgba(9,9,14,.3)!important;backdrop-filter:blur(5px)!important}
-.content>.panel::before{opacity:.78!important}
-.content>.panel::after{background:linear-gradient(180deg,rgba(8,8,12,.12),rgba(8,8,12,.52))!important}
-.products>.product{border-color:rgba(255,255,255,.2)!important;background:rgba(13,13,19,.54)!important;backdrop-filter:blur(7px)!important}
+.content>.panel{background:rgba(9,9,14,.08)!important;backdrop-filter:none!important}
+.content>.panel::before{opacity:.92!important}
+.content>.panel::after{background:linear-gradient(180deg,rgba(8,8,12,.02),rgba(8,8,12,.22))!important}
+.products>.product{border-color:rgba(255,255,255,.24)!important;background:rgba(13,13,19,.34)!important;backdrop-filter:blur(4px)!important}
 .products>.product>.product-body{background:transparent!important}
 .sidebar .sidebox{background:rgba(15,15,22,.7)!important;backdrop-filter:blur(10px)!important}

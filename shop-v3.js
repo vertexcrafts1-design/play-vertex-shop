@@ -10,7 +10,8 @@ const profileName=document.getElementById('profileName');
 const profileHint=document.getElementById('profileHint');
 const loginSave=document.getElementById('loginSave');
 const buyButtons=[...document.querySelectorAll('.buy-btn[data-url]')];
-const hero=document.querySelector('.hero');if(hero){const heroImg=document.createElement('img');heroImg.className='shop-hero-image';heroImg.src='assets/shop-hero-v2.png';heroImg.alt='Minecraft-Portal in der VertexCraft Welt';hero.prepend(heroImg)}
+const fixCss=document.createElement('link');fixCss.rel='stylesheet';fixCss.href='image-fix.css?v=20260905-complete';document.head.append(fixCss);
+const hero=document.querySelector('.hero');if(hero){const heroImg=document.createElement('img');heroImg.className='shop-hero-image';heroImg.src='assets/shop-hero-fixed.jpg';heroImg.alt='Minecraft-Portal in der VertexCraft Welt';hero.prepend(heroImg)}
 const checkoutLinks=Object.freeze({
   'https://buy.stripe.com/dRm14f25L1Oy3Eg3LkdMI00':'https://buy.stripe.com/bJe4grbGl3WG5Mo3LkdMI0f',
   'https://buy.stripe.com/5kQfZ9fWBgJs0s4chQdMI01':'https://buy.stripe.com/5kQ00b39P9h01w80z8dMI0g',

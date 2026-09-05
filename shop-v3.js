@@ -12,6 +12,7 @@ const loginSave=document.getElementById('loginSave');
 const buyButtons=[...document.querySelectorAll('.buy-btn[data-url]')];
 const fixCss=document.createElement('link');fixCss.rel='stylesheet';fixCss.href='image-fix.css?v=20260905-complete';document.head.append(fixCss);
 const hero=document.querySelector('.hero');if(hero){const heroImg=document.createElement('img');heroImg.className='shop-hero-image';heroImg.src='assets/shop-hero-fixed.jpg';heroImg.alt='Minecraft-Portal in der VertexCraft Welt';hero.prepend(heroImg)}
+document.querySelectorAll('.product-top').forEach(top=>{const img=document.createElement('img');img.className='product-art';if(top.classList.contains('currency')){img.src='assets/shop-crystals-fixed.jpg';img.alt='Truhe mit leuchtenden VertexCraft Kristallen'}else if(top.classList.contains('rank')){img.src='assets/shop-ranks-fixed.jpg';img.alt='Bronze-, Gold- und Diamond-Rang'}else{img.src='assets/shop-battlepass-fixed.jpg';img.alt='VertexCraft Season 2 BattlePass'}top.prepend(img)});
 const checkoutLinks=Object.freeze({
   'https://buy.stripe.com/dRm14f25L1Oy3Eg3LkdMI00':'https://buy.stripe.com/bJe4grbGl3WG5Mo3LkdMI0f',
   'https://buy.stripe.com/5kQfZ9fWBgJs0s4chQdMI01':'https://buy.stripe.com/5kQ00b39P9h01w80z8dMI0g',

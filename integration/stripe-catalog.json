@@ -1,0 +1,393 @@
+{
+  "rollout": "vertex_fair_20261002",
+  "state": "inactive_prices_pending_server",
+  "prices": [
+    {
+      "id": "price_1ULxLI1Gvri1WvgPipGix1PV",
+      "product": "prod_VC1rcEPN2itlf0",
+      "rank": "bronze",
+      "duration": "30d",
+      "active": false,
+      "unit_amount": 299,
+      "currency": "eur",
+      "tax_behavior": "inclusive",
+      "lookup_key": "vertex_fair_20261002_bronze_30d"
+    },
+    {
+      "id": "price_1ULxLw1Gvri1WvgPvAi9NjaA",
+      "product": "prod_VC1q9wk8UaU34l",
+      "rank": "gold",
+      "duration": "30d",
+      "active": false,
+      "unit_amount": 499,
+      "currency": "eur",
+      "tax_behavior": "inclusive",
+      "lookup_key": "vertex_fair_20261002_gold_30d"
+    },
+    {
+      "id": "price_1ULxLw1Gvri1WvgPpWwOXnIS",
+      "product": "prod_VC1riF0LL7zhWy",
+      "rank": "diamond",
+      "duration": "30d",
+      "active": false,
+      "unit_amount": 799,
+      "currency": "eur",
+      "tax_behavior": "inclusive",
+      "lookup_key": "vertex_fair_20261002_diamond_30d"
+    },
+    {
+      "id": "price_1ULxLx1Gvri1WvgPPdJXHGdo",
+      "product": "prod_VC1rcEPN2itlf0",
+      "rank": "bronze",
+      "duration": "permanent",
+      "active": false,
+      "unit_amount": 1299,
+      "currency": "eur",
+      "tax_behavior": "inclusive",
+      "lookup_key": "vertex_fair_20261002_bronze_permanent"
+    },
+    {
+      "id": "price_1ULxLy1Gvri1WvgPiW7HxqiW",
+      "product": "prod_VC1q9wk8UaU34l",
+      "rank": "gold",
+      "duration": "permanent",
+      "active": false,
+      "unit_amount": 1999,
+      "currency": "eur",
+      "tax_behavior": "inclusive",
+      "lookup_key": "vertex_fair_20261002_gold_permanent"
+    },
+    {
+      "id": "price_1ULxLy1Gvri1WvgPvjH60Slk",
+      "product": "prod_VC1riF0LL7zhWy",
+      "rank": "diamond",
+      "duration": "permanent",
+      "active": false,
+      "unit_amount": 2999,
+      "currency": "eur",
+      "tax_behavior": "inclusive",
+      "lookup_key": "vertex_fair_20261002_diamond_permanent"
+    }
+  ],
+  "current_links": [
+    {
+      "id": "plink_1UDA1E1Gvri1WvgP6PEkZIF8",
+      "url": "https://buy.stripe.com/28E5kv7q5fFo2AcepYdMI0p",
+      "active": true,
+      "amount": 4499,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UDA171Gvri1WvgPYtJxrIGC",
+      "url": "https://buy.stripe.com/fZu4grdOtctcfmY6XwdMI0o",
+      "active": true,
+      "amount": 2999,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UDA0z1Gvri1WvgPYk3JJe0l",
+      "url": "https://buy.stripe.com/bJe6oz4dT2SC8YA6XwdMI0n",
+      "active": true,
+      "amount": 1999,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UDA0r1Gvri1WvgPBOtb1we6",
+      "url": "https://buy.stripe.com/bJe9ALfWB0KucaMa9IdMI0m",
+      "active": true,
+      "amount": 1199,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UDA0l1Gvri1WvgPMCjYDuO3",
+      "url": "https://buy.stripe.com/5kQfZ98u978S1w81DcdMI0l",
+      "active": true,
+      "amount": 799,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UDA0f1Gvri1WvgPvYreyWXi",
+      "url": "https://buy.stripe.com/fZueV5dOtbp8eiUa9IdMI0k",
+      "active": true,
+      "amount": 499,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UBuiS1Gvri1WvgP1XEDorGL",
+      "url": "https://buy.stripe.com/bJe00b8u9bp8deQ5TsdMI0j",
+      "active": true,
+      "amount": 699,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UBuiK1Gvri1WvgPClEcUc1O",
+      "url": "https://buy.stripe.com/aFa4gr11Hctcgr2fu2dMI0i",
+      "active": true,
+      "amount": 2399,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UBuiD1Gvri1WvgP3KAsy0Fw",
+      "url": "https://buy.stripe.com/eVqbITbGl3WGeiU0z8dMI0h",
+      "active": true,
+      "amount": 1349,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UBui11Gvri1WvgP57kqy6MK",
+      "url": "https://buy.stripe.com/5kQ00b39P9h01w80z8dMI0g",
+      "active": true,
+      "amount": 749,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    },
+    {
+      "id": "plink_1UBuhs1Gvri1WvgPSLIUh9IS",
+      "url": "https://buy.stripe.com/bJe4grbGl3WG5Mo3LkdMI0f",
+      "active": true,
+      "amount": 349,
+      "currency": "eur",
+      "custom_fields": [
+        {
+          "key": "minecraft_name",
+          "label": {
+            "custom": "Minecraft-Spielername",
+            "type": "custom"
+          },
+          "optional": false,
+          "text": {
+            "default_value": null,
+            "maximum_length": 32,
+            "minimum_length": 1
+          },
+          "type": "text"
+        }
+      ],
+      "automatic_tax": {
+        "enabled": true,
+        "liability": {
+          "type": "self"
+        }
+      }
+    }
+  ]
+}

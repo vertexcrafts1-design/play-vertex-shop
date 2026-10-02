@@ -1,0 +1,128 @@
+# VertexShopFulfillment 1.0.5
+# Stripe -> Minecraft fulfillment for VertexCraft.
+# New rank system: VertexPerksShop /vrank (alias /minirank).
+require-played-before: true
+
+products:
+  # RÄNGE - aktuelle 30-Tage-Links (4,99 / 7,99 / 11,99 EUR)
+  plink_1UDA0f1Gvri1WvgPvYreyWXi:
+    name: "Bronze Rang (30 Tage)"
+    enabled: true
+    commands:
+      - "vrank give {player} bronze 30d"
+  plink_1UDA0l1Gvri1WvgPMCjYDuO3:
+    name: "Gold Rang (30 Tage)"
+    enabled: true
+    commands:
+      - "vrank give {player} gold 30d"
+  plink_1UDA0r1Gvri1WvgPBOtb1we6:
+    name: "Diamond Rang (30 Tage)"
+    enabled: true
+    commands:
+      - "vrank give {player} diamond 30d"
+
+  # RÄNGE - dauerhaft / Lifetime
+  plink_1UDA0z1Gvri1WvgPYk3JJe0l:
+    name: "Bronze Rang (Dauerhaft)"
+    enabled: true
+    commands:
+      - "vrank give {player} bronze permanent"
+  plink_1UDA171Gvri1WvgPYtJxrIGC:
+    name: "Gold Rang (Dauerhaft)"
+    enabled: true
+    commands:
+      - "vrank give {player} gold permanent"
+  plink_1UDA1E1Gvri1WvgP6PEkZIF8:
+    name: "Diamond Rang (Dauerhaft)"
+    enabled: true
+    commands:
+      - "vrank give {player} diamond permanent"
+
+  # RÄNGE - alte Links nur für bereits gestartete/alte Checkout-Sessions.
+  # Die URLs selbst werden nach dem Website-Cutover deaktiviert.
+  plink_1UBuhM1Gvri1WvgPbfb8xdFV:
+    name: "Bronze Rang (30 Tage, Alt)"
+    enabled: true
+    commands:
+      - "vrank give {player} bronze 30d"
+  plink_1UBuhY1Gvri1WvgPwB7zCSnB:
+    name: "Gold Rang (30 Tage, Alt)"
+    enabled: true
+    commands:
+      - "vrank give {player} gold 30d"
+  plink_1UBuhl1Gvri1WvgPlyWiMw9B:
+    name: "Diamond Rang (30 Tage, Alt)"
+    enabled: true
+    commands:
+      - "vrank give {player} diamond 30d"
+  plink_1UBjTo1Gvri1WvgPkCxR2hcs:
+    name: "Bronze Rang (30 Tage, Managed Alt)"
+    enabled: true
+    commands:
+      - "vrank give {player} bronze 30d"
+  plink_1UBjTw1Gvri1WvgPLwuWQEQ5:
+    name: "Gold Rang (30 Tage, Managed Alt)"
+    enabled: true
+    commands:
+      - "vrank give {player} gold 30d"
+  plink_1UBjU41Gvri1WvgPcRCc4mst:
+    name: "Diamond Rang (30 Tage, Managed Alt)"
+    enabled: true
+    commands:
+      - "vrank give {player} diamond 30d"
+
+  # KRISTALLE - aktuelle Stripe-Links
+  plink_1UBuhs1Gvri1WvgPSLIUh9IS:
+    name: "1.000 Kristalle"
+    enabled: true
+    commands:
+      - "crystals give {player} 1000"
+  plink_1UBui11Gvri1WvgP57kqy6MK:
+    name: "2.500 Kristalle"
+    enabled: true
+    commands:
+      - "crystals give {player} 2500"
+  plink_1UBuiD1Gvri1WvgP3KAsy0Fw:
+    name: "5.000 Kristalle"
+    enabled: true
+    commands:
+      - "crystals give {player} 5000"
+  plink_1UBuiK1Gvri1WvgPClEcUc1O:
+    name: "10.000 Kristalle"
+    enabled: true
+    commands:
+      - "crystals give {player} 10000"
+
+  # KRISTALLE - alte Links (Checkout-Kompatibilität)
+  plink_1UBeKv1Gvri1WvgP7M9Blbzp:
+    name: "1.000 Kristalle (Alt)"
+    enabled: true
+    commands:
+      - "crystals give {player} 1000"
+  plink_1UBeL51Gvri1WvgPmWYYx7mv:
+    name: "2.500 Kristalle (Alt)"
+    enabled: true
+    commands:
+      - "crystals give {player} 2500"
+  plink_1UBeLE1Gvri1WvgP3qkDENms:
+    name: "5.000 Kristalle (Alt)"
+    enabled: true
+    commands:
+      - "crystals give {player} 5000"
+  plink_1UBeLS1Gvri1WvgPfG0EAIi3:
+    name: "10.000 Kristalle (Alt)"
+    enabled: true
+    commands:
+      - "crystals give {player} 10000"
+
+  # BATTLEPASS
+  plink_1UBuiS1Gvri1WvgP1XEDorGL:
+    name: "BattlePass Premium"
+    enabled: true
+    commands:
+      - "bpadmin premium {player} true"
+  plink_1UBeM51Gvri1WvgP2qYrsk2u:
+    name: "BattlePass Premium (Alt)"
+    enabled: true
+    commands:
+      - "bpadmin premium {player} true"

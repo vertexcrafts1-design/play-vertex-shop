@@ -1,0 +1,16 @@
+# Nur in die vorhandene Konfiguration mergen; nicht die gesamte config.yml ersetzen.
+# Schaltet hardcodierte /feed-, /repair- oder /fly-Vorteile NICHT ab.
+# Erst zusammen mit der tatsächlich angepassten, getesteten Plugin-Version verwenden.
+homes:
+  base: 3
+  teleport-delay-seconds: 5
+rank-benefits:
+  bronze:
+    homes: 4
+    home-delay-seconds: 5
+  gold:
+    homes: 5
+    home-delay-seconds: 5
+  diamond:
+    homes: 6
+    home-delay-seconds: 5

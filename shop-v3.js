@@ -1,48 +1,90 @@
-const API='https://vertexcraft-api.vertexcrafts1.workers.dev';
-const tabs=[...document.querySelectorAll('[data-tab]')];
-const panels=[...document.querySelectorAll('[data-panel]')];
-const loginModal=document.getElementById('loginModal');
-const loginInput=document.getElementById('loginInput');
-const loginButton=document.getElementById('loginButton');
-const accountButton=document.getElementById('accountButton');
-const sideLogin=document.getElementById('sideLogin');
-const profileName=document.getElementById('profileName');
-const profileHint=document.getElementById('profileHint');
-const loginSave=document.getElementById('loginSave');
-const buyButtons=[...document.querySelectorAll('.buy-btn[data-url]')];
-const fixCss=document.createElement('link');fixCss.rel='stylesheet';fixCss.href='image-fix.css?v=20260907-ranks';document.head.append(fixCss);
-const hero=document.querySelector('.hero');if(hero){const heroImg=document.createElement('img');heroImg.className='shop-hero-image';heroImg.src='assets/shop-hero-fixed.jpg';heroImg.alt='Minecraft-Portal in der VertexCraft Welt';hero.prepend(heroImg)}
-document.querySelectorAll('.product-top').forEach(top=>{const title=top.closest('.product')?.querySelector('h3')?.textContent||'';const img=document.createElement('img');img.className='product-art';if(title.includes('1.000'))img.src='assets/crystals-1000.jpg';else if(title.includes('2.500'))img.src='assets/crystals-2500.jpg';else if(title.includes('5.000'))img.src='assets/crystals-5000.jpg';else if(title.includes('10.000'))img.src='assets/crystals-10000.jpg';else if(title.includes('Bronze'))img.src='assets/rank-bronze.jpg';else if(title.includes('Gold'))img.src='assets/rank-gold.jpg';else if(title.includes('Diamond'))img.src='assets/rank-diamond.jpg';else img.src='assets/shop-battlepass-fixed.jpg';img.alt=title+' Produktbild';top.prepend(img)});
-const rankPanel=document.querySelector('[data-panel="ranks"]');if(rankPanel){const comparison=document.createElement('section');comparison.className='rank-comparison';comparison.innerHTML=`<div class="rank-comparison-head"><span class="section-kicker">RANG-VORTEILE</span><h3>Ränge vergleichen</h3><p>30-Tage- und Dauer-Versionen haben dieselben Vorteile. Dauer-Ränge laufen nur nicht ab.</p></div><div class="rank-table-wrap"><table class="rank-table"><thead><tr><th>Vorteil</th><th class="bronze">Bronze</th><th class="gold">Gold</th><th class="diamond">Diamond</th></tr></thead><tbody><tr><td>Homes</td><td>8</td><td>12</td><td>20</td></tr><tr><td><code>/feed</code></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td><code>/craft</code></td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td><code>/item rename</code></td><td>2× / 30 Tage</td><td>2× / 30 Tage</td><td>2× / 30 Tage</td></tr><tr><td><code>/enderchest</code></td><td>–</td><td>✓</td><td>✓</td></tr><tr><td><code>/repair</code></td><td>–</td><td>✓</td><td>✓</td></tr><tr><td><code>/fly</code></td><td>–</td><td>–</td><td>✓</td></tr><tr><td>Home-Teleport</td><td>4 Sek.</td><td>3 Sek.</td><td>2 Sek.</td></tr></tbody></table></div>`;rankPanel.append(comparison)}
-const rankCss=document.createElement('link');rankCss.rel='stylesheet';rankCss.href='rank-comparison.css?v=20260907-ranks';document.head.append(rankCss);
-const checkoutLinks=Object.freeze({
-  'https://buy.stripe.com/dRm14f25L1Oy3Eg3LkdMI00':'https://buy.stripe.com/bJe4grbGl3WG5Mo3LkdMI0f',
-  'https://buy.stripe.com/5kQfZ9fWBgJs0s4chQdMI01':'https://buy.stripe.com/5kQ00b39P9h01w80z8dMI0g',
-  'https://buy.stripe.com/3cI3cnbGl8cW3Eg0z8dMI02':'https://buy.stripe.com/eVqbITbGl3WGeiU0z8dMI0h',
-  'https://buy.stripe.com/3cIcMX11Hal4gr281AdMI03':'https://buy.stripe.com/aFa4gr11Hctcgr2fu2dMI0i',
-  'https://buy.stripe.com/3cIaEPeSx3WG2Ac5TsdMI09':'https://buy.stripe.com/fZueV5dOtbp8eiUa9IdMI0k',
-  'https://buy.stripe.com/3cI5kvh0F1Oy1w8fu2dMI0a':'https://buy.stripe.com/5kQfZ98u978S1w81DcdMI0l',
-  'https://buy.stripe.com/28E28jdOt2SCeiU95EdMI0b':'https://buy.stripe.com/bJe9ALfWB0KucaMa9IdMI0m',
-  'https://buy.stripe.com/dRm6ozeSxeBkcaMdlUdMI0c':'https://buy.stripe.com/fZueV5dOtbp8eiUa9IdMI0k',
-  'https://buy.stripe.com/aFa14f11HeBkgr26XwdMI0d':'https://buy.stripe.com/5kQfZ98u978S1w81DcdMI0l',
-  'https://buy.stripe.com/cNi00bdOt2SC8YA4PodMI0e':'https://buy.stripe.com/bJe9ALfWB0KucaMa9IdMI0m',
-  'https://buy.stripe.com/eVqfZ9h0FgJscaM2HgdMI07':'https://buy.stripe.com/bJe00b8u9bp8deQ5TsdMI0j'
-});
-let player=localStorage.getItem('vertex_player_verified')||'';
-if(!validPlayer(player)){player='';localStorage.removeItem('vertex_player_verified')}
-const statsLink=document.createElement('a');statsLink.href='https://web.play-vertex.com/stats.html';statsLink.textContent='Ranglisten';document.querySelector('.head-links')?.insertBefore(statsLink,loginButton);
-const note=document.querySelector('.login-note');if(note)note.textContent='Dein Spielername wird live mit VertexCraft abgeglichen. Nur Accounts, die bereits mindestens einmal auf dem Server waren, können sich anmelden. Stripe fragt den Namen zusätzlich im Checkout ab.';
-function setTab(name){tabs.forEach(t=>t.classList.toggle('active',t.dataset.tab===name));panels.forEach(p=>p.classList.toggle('active',p.dataset.panel===name));window.scrollTo({top:document.querySelector('.categorybar').offsetTop-80,behavior:'smooth'})}
-tabs.forEach(t=>t.addEventListener('click',()=>setTab(t.dataset.tab)));
-function validPlayer(name){return /^[A-Za-z0-9_]{1,32}$/.test(name.trim())}
-function status(text,ok=false){let el=document.getElementById('loginStatus');if(!el){el=document.createElement('p');el.id='loginStatus';el.className='login-status';loginInput.insertAdjacentElement('afterend',el)}el.textContent=text;el.classList.toggle('verified',ok)}
-function openLogin(){loginInput.value=player;status('');loginModal.classList.add('open');setTimeout(()=>loginInput.focus(),50)}
-function closeLogin(){loginModal.classList.remove('open')}
-function syncLogin(){const logged=validPlayer(player);loginButton.style.display=logged?'none':'inline-block';accountButton.style.display=logged?'inline-block':'none';if(logged){accountButton.textContent='👤 '+player;profileName.textContent=player;profileHint.textContent='Spieler auf VertexCraft bestätigt. Du kannst jetzt einkaufen.';sideLogin.textContent='Spieler wechseln';}else{profileName.textContent='Nicht angemeldet';profileHint.textContent='Nur Spieler, die bereits auf VertexCraft waren, können sich anmelden und einkaufen.';sideLogin.textContent='Jetzt anmelden';}buyButtons.forEach(b=>{b.classList.toggle('locked',!logged);b.textContent=logged?'Kaufen':'🔒 Login';});}
-async function verifyPlayer(name){const r=await fetch(`${API}/api/public/exists?name=${encodeURIComponent(name)}`,{headers:{Accept:'application/json'},credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer'});if(!r.ok)throw new Error('api_failed');return r.json()}
-async function doLogin(){const value=loginInput.value.trim();if(!validPlayer(value)){status('Bitte einen gültigen Minecraft-Spielernamen eingeben.');return;}loginSave.disabled=true;loginSave.textContent='Prüfe …';status('Spieler wird auf VertexCraft geprüft …');try{const result=await verifyPlayer(value);if(!result.exists){status('Dieser Spieler war noch nie auf VertexCraft. Ein Shop-Login ist deshalb nicht möglich.');return;}const verifiedName=String(result.name||value).trim();if(!validPlayer(verifiedName))throw new Error('invalid_api_response');player=verifiedName;localStorage.setItem('vertex_player_verified',player);status('Spieler bestätigt ✓',true);syncLogin();setTimeout(closeLogin,500);}catch(e){status('Die Spielerprüfung ist gerade nicht erreichbar. Prüfe VertexPublicStatsWeb und die öffentliche Worker-Route.');}finally{loginSave.disabled=false;loginSave.textContent='Anmelden';}}
-loginButton.addEventListener('click',openLogin);accountButton.addEventListener('click',openLogin);sideLogin.addEventListener('click',openLogin);document.getElementById('loginCancel').addEventListener('click',closeLogin);loginSave.addEventListener('click',doLogin);loginModal.addEventListener('click',e=>{if(e.target===loginModal)closeLogin()});loginInput.addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
-buyButtons.forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();if(!validPlayer(player)){openLogin();return;}const checkout=checkoutLinks[btn.dataset.url]||btn.dataset.url;if(!checkout){status('Dieser Artikel ist derzeit nicht verfügbar.');return;}const target=new URL(checkout);if(target.protocol!=='https:'||target.hostname!=='buy.stripe.com')return;sessionStorage.setItem('vertex_last_player',player);window.location.assign(target.href);}));
-document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(btn.dataset.copy);const old=btn.textContent;btn.textContent='IP kopiert ✓';setTimeout(()=>btn.textContent=old,1600)}catch{}}));
-const params=new URLSearchParams(location.search);if(params.get('payment')==='success'){const box=document.getElementById('successBox');const session=params.get('session_id')||'';const message=document.createTextNode('✓ Zahlung abgeschlossen. Willkommen zurück'+(player?' '+player:'')+'.');box.replaceChildren(message);if(/^cs_(test_|live_)[A-Za-z0-9_]+$/.test(session)){box.append(document.createTextNode(' Bestell-ID: '));const code=document.createElement('code');code.textContent=session.slice(0,18)+'…';box.append(code)}box.classList.add('show');history.replaceState({},'',location.pathname);}
-syncLogin();
+(() => {
+  'use strict';
+  const core = window.VertexCheckout;
+  const $ = id => document.getElementById(id);
+  const modal = $('loginModal'), confirm = $('checkoutConfirm');
+  const tabs = [...document.querySelectorAll('[data-tab]')];
+  const panels = [...document.querySelectorAll('[data-panel]')];
+  let player = '', pendingProduct, opener, busy = false, operation = 0;
+  try { player = localStorage.getItem('vertex_player_verified') || ''; } catch {}
+  if (!core.validPlayer(player)) player = '';
+  function savePlayer(name) { player = name; try { if(name)localStorage.setItem('vertex_player_verified',name);else localStorage.removeItem('vertex_player_verified'); } catch {} syncPlayer(); }
+  function syncPlayer() {
+    $('loginButton').hidden=Boolean(player); $('accountButton').hidden=!player;
+    $('accountButton').textContent=player || 'Spieler wechseln';
+    $('profileName').textContent=player || 'Noch kein Spieler';
+    $('profileHint').textContent=player ? 'Ausgewählter Empfänger. Wir prüfen den Namen vor jedem Checkout erneut.' : 'Wähle deinen Minecraft-Namen, damit wir den Artikel richtig zuordnen können.';
+    $('sideLogin').textContent=player ? 'Spieler wechseln' : 'Spieler wählen';
+    $('forgetPlayer').hidden=!player;
+  }
+  $('forgetPlayer').addEventListener('click',()=>savePlayer(''));
+  function status(text,ok=false) { $('loginStatus').textContent=text; $('loginStatus').classList.toggle('verified',ok); }
+  function openPlayer(trigger) {
+    opener=trigger || document.activeElement; $('loginInput').value=player; status(''); modal.showModal(); $('loginInput').focus();
+  }
+  modal.addEventListener('close',()=>{operation++; opener?.focus();});
+  $('loginCancel').addEventListener('click',()=>{pendingProduct=null;modal.close();});
+  modal.addEventListener('cancel',()=>{pendingProduct=null;});
+  ['loginButton','accountButton','sideLogin'].forEach(id=>$(id).addEventListener('click',event=>{pendingProduct=null;openPlayer(event.currentTarget);}));
+  const messages = {
+    player_missing:'Dieser Spieler ist noch nicht bekannt. Spiele einmal auf VertexCraft und prüfe dann deinen Namen erneut.',
+    invalid_player:'Bitte gib einen gültigen Spielernamen ein. Bei Bedrock gehört das Präfix dazu.',
+    invalid_response:'Der Name konnte nicht eindeutig zugeordnet werden. Bitte prüfe ihn noch einmal.'
+  };
+  const errorMessage = error => messages[error.message] || 'Die Spielerprüfung ist gerade nicht erreichbar. Bitte versuche es später erneut oder melde dich beim Support.';
+  $('playerForm').addEventListener('submit', async event => {
+    event.preventDefault(); if(busy)return;
+    const name=$('loginInput').value.trim();
+    if(!core.validPlayer(name)){status(messages.invalid_player);return;}
+    busy=true; const current=++operation; $('loginSave').disabled=true; $('loginSave').textContent='Prüfe …'; status('Spieler wird auf VertexCraft geprüft …');
+    try {
+      const canonical=await core.verifyPlayer(name);
+      if(current!==operation || !modal.open)return;
+      savePlayer(canonical); const next=pendingProduct; pendingProduct=null; modal.close(); if(next)showCheckout(next);
+    } catch(error) { if(current===operation && modal.open)status(errorMessage(error)); }
+    finally {busy=false; $('loginSave').disabled=false; $('loginSave').textContent='Spieler prüfen';}
+  });
+  function showCheckout(button) {
+    if(!player){pendingProduct=button;openPlayer(button);return;}
+    pendingProduct=button; opener=button;
+    const article=button.closest('article');
+    const term=button.dataset.rank ? ' · '+(button.dataset.product.endsWith('30d')?'30 Tage':'Dauerhaft') : '';
+    $('confirmProduct').textContent=article.querySelector('h3').textContent+term;
+    $('confirmPrice').textContent=article.querySelector('.product-price strong').textContent;
+    $('confirmPlayer').textContent=player; $('checkoutStatus').textContent=''; confirm.showModal();
+  }
+  document.querySelectorAll('.buy-btn').forEach(button=>button.addEventListener('click',()=>showCheckout(button)));
+  $('checkoutCancel').addEventListener('click',()=>confirm.close());
+  confirm.addEventListener('close',()=>{operation++;pendingProduct=null;opener?.focus();});
+  $('checkoutContinue').addEventListener('click', async () => {
+    if(busy || !pendingProduct)return;
+    busy=true; const current=++operation, button=pendingProduct, name=player;
+    $('checkoutContinue').disabled=true; $('checkoutContinue').textContent='Prüfe …'; $('checkoutStatus').textContent='Der Empfänger wird noch einmal geprüft.';
+    try {
+      const canonical=await core.verifyPlayer(name);
+      if(current!==operation || !confirm.open)return;
+      const url=core.checkoutUrl(button.dataset.url,canonical,button.dataset.product);
+      try {sessionStorage.setItem('vertex_last_player',canonical);}catch{}
+      window.location.assign(url);
+    } catch(error) { if(current===operation && confirm.open)$('checkoutStatus').textContent=errorMessage(error); }
+    finally {busy=false; $('checkoutContinue').disabled=false; $('checkoutContinue').textContent='Zu Stripe';}
+  });
+  function setTab(name) {
+    if(!tabs.some(tab=>tab.dataset.tab===name))name='ranks';
+    tabs.forEach(tab=>{const selected=tab.dataset.tab===name;tab.classList.toggle('active',selected);if(selected)tab.setAttribute('aria-current','true');else tab.removeAttribute('aria-current');});
+    panels.forEach(panel=>panel.hidden=panel.dataset.panel!==name);
+  }
+  tabs.forEach(tab=>tab.addEventListener('click',event=>{event.preventDefault();history.pushState({},'','#'+tab.dataset.tab);setTab(tab.dataset.tab);}));
+  window.addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
+  window.addEventListener('popstate',()=>setTab(location.hash.slice(1)));
+  document.querySelectorAll('[data-duration]').forEach(button=>button.addEventListener('click',()=>{
+    const duration=button.dataset.duration;
+    document.querySelectorAll('[data-duration]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active));});
+    document.querySelectorAll('[data-rank-price]').forEach(item=>item.textContent=item.getAttribute('data-'+duration));
+    document.querySelectorAll('[data-rank-term]').forEach(item=>item.textContent=duration==='30d'?'für 30 Tage · einmalig':'dauerhaft · einmalig');
+    document.querySelectorAll('[data-rank].buy-btn').forEach(item=>{item.dataset.product=item.dataset.rank+'-'+duration;item.dataset.url=core.links[item.dataset.product];});
+  }));
+  const params=new URLSearchParams(location.search), message=core.returnMessage(params);
+  if(message){$('successBox').textContent=message;$('successBox').hidden=false;params.delete('payment');params.delete('session_id');history.replaceState({},'',location.pathname+(params.size?'?'+params:'')+location.hash);}
+  $('year').textContent=new Date().getFullYear(); syncPlayer(); setTab(location.hash.slice(1));
+})();
